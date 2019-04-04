@@ -9,17 +9,27 @@ function main()
   video4 = document.getElementById("video4")
 
   //-- Establecer el tamaño del vídeo
-  video1.width = 200;
-  video1.height= 100;
+  video1.width = 400;
+  video1.height= 200;
   video1.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"
-  video2.width = 200;
-  video2.height= 100;
+  video1.onmouseover = () => {
+    console.log("Raton encima video 1")
+    video1.muted = false;
+  }
+  video1.onmouseout = () => {
+    console.log("Raton fuera video 1")
+    video1.muted = true;
+  }
+  video2.width = 400;
+  video2.height= 200;
   video2.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4"
-  video3.width = 200;
-  video3.height= 100;
+  video2.onmouseover = () => {}
+  video3.width = 400;
+  video3.height= 200;
   video3.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4"
-  video4.width = 400;
-  video4.height= 200;
+  video3.onmouseover = () => {}
+  video4.width = 800;
+  video4.height= 400;
 
   //-- Boton de Play
   ver1 = document.getElementById('play1')
