@@ -1,6 +1,6 @@
 function main()
 {
-  console.log("Video 02...")
+  display: document.getElementById('display')
 
   //-- Obtener el elemento de video
   video1 = document.getElementById("video1")
@@ -47,11 +47,28 @@ function main()
   //-- Al apretar el boton de ver video
   ver1.onclick = () => {
     video4.src = video1.src
-    video4.currentTime = video1.currentTime}
+    video4.currentTime = video1.currentTime
+    display.innerHTML = 'VIDEO A'
+  }
   ver2.onclick = () => {
     video4.src = video2.src
-    video4.currentTime = video2.currentTime}
+    video4.currentTime = video2.currentTime
+    display.innerHTML = 'VIDEO B'
+  }
   ver3.onclick = () => {
     video4.src = video3.src
-    video4.currentTime = video3.currentTime}
+    video4.currentTime = video3.currentTime
+    display.innerHTML = 'VIDEO C'
+  }
+
+  video4.addEventListener("timeupdate",function(ev){
+      var time  = (video4.currentTime);
+      var hours = Math.floor( time / 3600 );
+      var minutes = Math.floor( (time % 3600) / 60 );
+      var seconds = Math.floor(time % 60);
+
+      var result = hours + ":" + minutes + ":" + seconds;
+      clk.innerHTML = result;
+    },true);
+
 }
